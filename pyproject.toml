@@ -1,0 +1,37 @@
+[project]
+name = "phoebus-tui"
+version = "0.1.0"
+description = "An application for displaying phoebus operator interface (bob) screens as a TUI window"
+readme = "README.md"
+authors = [
+    { name = "Jakub Wlodek", email = "jwlodek@bnl.gov" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "aioca>=2.1",
+    "p4p>=4.2.2",
+    "phoebusgen",
+    "textual>=8.2.8",
+]
+
+[project.scripts]
+phoebus-tui = "phoebus_tui:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+phoebusgen = { git = "https://github.com/jwlodek/phoebusgen", rev = "make-v4-pass-static-analysis" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]

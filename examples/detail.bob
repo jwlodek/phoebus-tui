@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>$(DEV) Detail</name>
+  <width>380</width>
+  <height>160</height>
+  <background_color>
+    <color red="220" green="230" blue="240"/>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>Title</name>
+    <text>$(DEV)</text>
+    <x>10</x>
+    <y>10</y>
+    <width>200</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0"/>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PositionLabel</name>
+    <text>Position</text>
+    <x>10</x>
+    <y>40</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Position</name>
+    <pv_name>sim://sine(0, 50, 20, 0.2)</pv_name>
+    <x>120</x>
+    <y>40</y>
+    <width>120</width>
+    <precision>2</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>CounterLabel</name>
+    <text>Counter</text>
+    <x>10</x>
+    <y>70</y>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Counter</name>
+    <pv_name>loc://$(DEV):counter&lt;VLong&gt;(0)</pv_name>
+    <x>120</x>
+    <y>70</y>
+    <width>120</width>
+    <format>1</format>
+    <precision>0</precision>
+    <limits_from_pv>false</limits_from_pv>
+    <minimum>0</minimum>
+    <maximum>100</maximum>
+  </widget>
+  <widget type="slide_button" version="2.0.0">
+    <name>Busy</name>
+    <pv_name>loc://$(DEV):busy(0)</pv_name>
+    <label>Busy</label>
+    <x>120</x>
+    <y>100</y>
+    <width>120</width>
+    <height>20</height>
+  </widget>
+</display>
